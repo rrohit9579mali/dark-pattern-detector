@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Dark Pattern Detector",
+    "version": "1.2",
+    "description": "Recognize dark patterns in online stores and websites",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+            "js/common.js",
+            "js/block_segment.js",
+            "js/content.js"
+        ],
+        "css": [
+            "css/main.css"
+        ],
+        "run_at": "document_end"
+    }],
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "icons": {
+        "16": "ANB48.ico",
+        "48": "ANB48.ico",
+        "128": "ANB128.ico"
+    }
+}
